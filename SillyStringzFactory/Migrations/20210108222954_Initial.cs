@@ -13,7 +13,8 @@ namespace SillyStringzFactory.Migrations
                 {
                     EngineerId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    Assigned = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,7 +27,8 @@ namespace SillyStringzFactory.Migrations
                 {
                     MachineId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    Owned = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

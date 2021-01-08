@@ -3,22 +3,22 @@
   Layout = "_Layout";
 }
 
-@model SillyStringzFactory.Models.Engineer;
+@model SillyStringzFactory.Models.Machine;
 
 <h3>Details For: @Html.DisplayFor(model => model.Name)</h3>
-<p>@Html.ActionLink("Connect Machine to Engineer", "Edit", "Engineers", new {id = @Model.EngineerId}, new {@class="btn btn-success"})</p>
+<p>@Html.ActionLink("Connect Engineer to Machin", "Edit", "Machines", new {id = @Model.MachineId}, new {@class="btn btn-success"})</p>
 <ul>
 @if (@Model.JoinEntries.Count == 0)
 {
-  <p>This engineer isn't assigned to any machines.</p>
+  <p>This machine isn't assigned to any Engineers.</p>
   
 }
 else
 {
-  <h4>Machines assigned to: @Model.Name</h4>
+  <h4>Engineers assigned to:@Model.Name</h4>
   @foreach (var join in @Model.JoinEntries)
   {
-    <p>@join.Machine.Name</p>
+    <p>@join.Engineer.Name</p>
     @using (Html.BeginForm("DeleteJoin", "Engineers"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)

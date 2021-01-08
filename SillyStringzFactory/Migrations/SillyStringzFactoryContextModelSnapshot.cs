@@ -21,6 +21,8 @@ namespace SillyStringzFactory.Migrations
                     b.Property<int>("EngineerId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Assigned");
+
                     b.Property<string>("Name");
 
                     b.HasKey("EngineerId");
@@ -53,6 +55,8 @@ namespace SillyStringzFactory.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<bool>("Owned");
+
                     b.HasKey("MachineId");
 
                     b.ToTable("Machines");
@@ -61,12 +65,12 @@ namespace SillyStringzFactory.Migrations
             modelBuilder.Entity("SillyStringzFactory.Models.EngineerMachine", b =>
                 {
                     b.HasOne("SillyStringzFactory.Models.Engineer", "Engineer")
-                        .WithMany("Machines")
+                        .WithMany("JoinEntries")
                         .HasForeignKey("EngineerId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SillyStringzFactory.Models.Machine", "Machine")
-                        .WithMany("Engineers")
+                        .WithMany("JoinEntries")
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

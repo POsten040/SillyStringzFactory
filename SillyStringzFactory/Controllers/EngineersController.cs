@@ -44,20 +44,20 @@ namespace SillyStringzFactory.Controllers
     public ActionResult Details(int id)
     {
       Engineer thisEngineer = _db.Engineers
-        .Include(Engineer => Engineer.Machines)
+        .Include(Engineer => Engineer.JoinEntries)
         .ThenInclude(join => join.Machine)
         .FirstOrDefault(Engineer => Engineer.EngineerId == id);
       return View(thisEngineer);
     }
-        public ActionResult AddMachine(int id)
+        public ActionResult Edit(int id)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(EngineersController => EngineersController.EngineerId == id);
-      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      ViewBag.Machines = _db.Machines.ToList();
       return View(thisEngineer);
     }
 
     [HttpPost]
-    public ActionResult AddMachine(Engineer engineer, List<int> Machines)
+    public ActionResult Edit(Engineer engineer, List<int> Machines)
     {
       if (Machines.Count != 0)
       {
@@ -68,7 +68,15 @@ namespace SillyStringzFactory.Controllers
       }
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
+    }
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Home");
     }
   }
 }

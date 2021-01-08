@@ -8,7 +8,7 @@ using SillyStringzFactory.Models;
 namespace SillyStringzFactory.Migrations
 {
     [DbContext(typeof(SillyStringzFactoryContext))]
-    [Migration("20210108170843_Initial")]
+    [Migration("20210108222954_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,8 @@ namespace SillyStringzFactory.Migrations
                 {
                     b.Property<int>("EngineerId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Assigned");
 
                     b.Property<string>("Name");
 
@@ -55,6 +57,8 @@ namespace SillyStringzFactory.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<bool>("Owned");
+
                     b.HasKey("MachineId");
 
                     b.ToTable("Machines");
@@ -63,12 +67,12 @@ namespace SillyStringzFactory.Migrations
             modelBuilder.Entity("SillyStringzFactory.Models.EngineerMachine", b =>
                 {
                     b.HasOne("SillyStringzFactory.Models.Engineer", "Engineer")
-                        .WithMany("Machines")
+                        .WithMany("JoinEntries")
                         .HasForeignKey("EngineerId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SillyStringzFactory.Models.Machine", "Machine")
-                        .WithMany("Engineers")
+                        .WithMany("JoinEntries")
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

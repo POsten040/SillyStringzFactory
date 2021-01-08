@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillyStringzFactory.Models.Engineer;
+
+<h4>Assign an Machine to @Html.DisplayFor(model => model.Name):</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  {
+    int cnt = 0;
+
+    <p>Availible Machines:</p>
+    foreach (var machine in ViewBag.Machines)
+    {
+      if (cnt++ % 3 == 0)
+      {
+        @:</tr><tr>
+      }
+      @:<td>
+        <input type="checkbox"
+            name="machines"
+            value="@machine.MachineId"
+            @(Html.Raw(machine.Owned ? "checked=\"checked\"" : "")) />
+            @machine.Name
+      @:</td>
+    }
+    @:</tr>
+  }
+  <input type="submit" value="Save" />
+}
