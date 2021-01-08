@@ -16,11 +16,11 @@
             @foreach(Engineer eng in ViewBag.Eng)
             {
               <h4>@eng.Name</h4>
-              <p>@Html.ActionLink("Details", "Details", "Engineers", new {id = eng.EngineerId}, new {@class="details"})</p>
-              <p>@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {id = eng.EngineerId}, new {@class="delete"})</p>
+              <p>@Html.ActionLink("Details", "Details", "Engineers", new {id = eng.EngineerId}, new {@class="btn btn-info"})</p>
+              <p>@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {id = eng.EngineerId}, new {@class="btn btn-warning"})</p>
             }
         </ul>
-        <p>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class="nav-pill"})</p>
+        <p>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class="btn btn-success"})</p>
         
     </div>
     <div class="tab-pane" id="machines">
@@ -28,10 +28,10 @@
             @foreach(Machine mac in ViewBag.Mac)
             {
               <h4>@mac.Name</h4>
-              <p>@Html.ActionLink("Details", "Details", "Machines", new { id = mac.MachineId }, new {@class="details"})</p>
-              <p>@Html.ActionLink("Delete Machine", "Delete", "Machines", new {id = mac.MachineId}, new {@class="delete"});</p>
+              <p>@Html.ActionLink("Details", "Details", "Machines", new { id = mac.MachineId }, new {@class="btn btn-info"})</p>
+              <p>@Html.ActionLink("Delete Machine", "Delete", "Machines", new {id = mac.MachineId}, new {@class="btn btn-warning"})</p>
             }
         </ul>
-        <p>@Html.ActionLink("Add Machine", "Create", "Machines", null, new {@class="nav-pill"})</p>
+        <p>@Html.ActionLink("Add Machine", "Create", "Machines", null, new {@class="btn btn-success"})</p>
     </div>
 </div>

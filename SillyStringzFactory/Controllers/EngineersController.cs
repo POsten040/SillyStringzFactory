@@ -49,5 +49,26 @@ namespace SillyStringzFactory.Controllers
         .FirstOrDefault(Engineer => Engineer.EngineerId == id);
       return View(thisEngineer);
     }
+        public ActionResult AddMachine(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(EngineersController => EngineersController.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult AddMachine(Engineer engineer, List<int> Machines)
+    {
+      if (Machines.Count != 0)
+      {
+        foreach (int machine in Machines)
+        {
+          _db.EngineerMachine.Add(new EngineerMachine() { MachineId = machine, EngineerId = engineer.EngineerId });
+        }
+      }
+      _db.Entry(engineer).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
