@@ -1,31 +1,16 @@
-.details {
-  background-color: rgba(59, 59, 126, 0.993);
-  color: white;
-  position: relative;
-  width: 10%;
-  border-radius: 25px;
-  text-align: center;
-  padding:3px;
-}
-
-.delete {
-  background-color: rgb(131, 98, 10);
-  color: white;
-  position: relative;
-  width: 10%;
-  border-radius: 25px;
-  text-align: center;
-  padding:3px;
-}
 
 #engineers #machines {
-
   background-color: rgba(222, 189, 255, 0.328);
 }
 
-.nav-pill {
-  background-color: rgb(51, 105, 51);
-  color:white;
-  padding:3px;
-  border-radius:25px;
+.btn-success {
+  background-color:#796A95 !important;
+}
+
+.btn-warning {
+  background-color:#95796A !important;
+}
+
+.btn-info {
+  background-color:#6A9579 !important;
 }
