@@ -39,7 +39,7 @@ namespace SillyStringzFactory.Controllers
       var thisEngineer = _db.Engineers.FirstOrDefault(Engineer => Engineer.EngineerId == id);
       _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   }
 }

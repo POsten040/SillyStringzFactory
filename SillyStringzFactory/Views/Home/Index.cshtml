@@ -11,13 +11,13 @@
 </ul>
 
 <div id='content' class="tab-content">
-    <div class="tab-pane" id="engineers">
+    <div class="tab-pane active" id="engineers">
         <ul>
             @foreach(Engineer eng in ViewBag.Eng)
             {
               <h4>@eng.Name</h4>
-              <p class="details">@Html.ActionLink("Details", "Details", new { id = eng.EngineerId });</p>
-              <p class="delete">@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {@Style = "color:white;"});</p>
+              <p class="details">@Html.ActionLink("Details", "Details", new {id = eng.EngineerId});</p>
+              <p class="delete">@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {id = eng.EngineerId});</p>
             }
         </ul>
         <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>

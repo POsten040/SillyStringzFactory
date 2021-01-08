@@ -21,3 +21,12 @@ p.delete {
 p.delete:hover {
   background-color: rgb(214, 120, 108);
 }
+
+#engineers {
+
+  background-color: rgba(222, 189, 255, 0.328);
+}
+
+#machines {
+  background-color: rgba(222, 189, 255, 0.328);
+}
