@@ -4,60 +4,31 @@
 
 @using SillyStringzFactory.Models;
 
-<div class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link active"
-      id="tab-1"
-      data-mdb-toggle="tab"
-      href="#tabs-1"
-      role="tab"
-      aria-controls="tabs-1"
-      aria-selected="true"
-      >
-        <h2>Engineers</h2>
-      </a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="tab-2"
-      data-mdb-toggle="tab"
-      href="#tabs-2"
-      role="tab"
-      aria-controls="tabs-2"
-      aria-selected="false"
-      >
-        <h2>Machines</h2>
-      </a
-    >
-  </li>
+
+<ul class="nav nav-pills">
+    <li><a href="#engineers" data-toggle="tab">Engineers</a></li>
+    <li><a href="#machines" data-toggle="tab">Machines</a></li>
+</ul>
+
+<div id='content' class="tab-content">
+    <div class="tab-pane" id="engineers">
+        <ul>
+            @foreach(Engineer eng in ViewBag.Eng)
+            {
+              <h4>@eng.Name</h4>
+              <p>@Html.ActionLink("Details", "Details", new { id = eng.EngineerId })</p>
+            }
+        </ul>
+        <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
+    </div>
+    <div class="tab-pane" id="machines">
+        <ul>
+            @foreach(Machine mac in ViewBag.Mac)
+            {
+              <h4>@mac.Name</h4>
+              <p>@Html.ActionLink("Details", "Details", new { id = mac.MachineId })</p>
+            }
+        </ul>
+        <button>@Html.ActionLink("Add Machine", "Create", "Machines")</button>
+    </div>
 </div>
-<div class="tab-content" id="content">
-  <div
-    class="tab-pane fade show active"
-    id="tabs-1"
-    role="tabpanel"
-    aria-labelledby="tab-1"
-  >
-  @foreach(Engineer eng in ViewBag.Eng)
-  {
-    <h4>@eng.Name</h4>
-  }
-  </div>
-  <div
-    class="tab-pane fade"
-    id="tabs-2"
-    role="tabpanel"
-    aria-labelledby="tab-2"
-  >
-  @foreach(Machine mac in ViewBag.Mac)
-  {
-    <h4>@mac.Name</h4>
-  }
-  </div>
-</div>
-
-
-
-

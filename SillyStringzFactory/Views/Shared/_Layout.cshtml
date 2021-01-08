@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Silly Stringz Factory</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
   <body>
     <button class="btn">@Html.ActionLink("Home", "Index", "Home")</button>
-    <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
-    <button class="btn">@Html.ActionLink("Add Machine", "Create", "Machines")</button>
     @RenderBody()
   </body>
