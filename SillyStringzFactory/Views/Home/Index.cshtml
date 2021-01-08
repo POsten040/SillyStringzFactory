@@ -6,7 +6,7 @@
 
 
 <ul class="nav nav-pills">
-    <li><a href="#engineers" data-toggle="tab">Engineers</a></li>
+    <li><a href="#engineers" data-toggle="tab" autofocus>Engineers</a></li>
     <li><a href="#machines" data-toggle="tab">Machines</a></li>
 </ul>
 
@@ -16,11 +16,11 @@
             @foreach(Engineer eng in ViewBag.Eng)
             {
               <h4>@eng.Name</h4>
-              <p class="details">@Html.ActionLink("Details", "Details", new {id = eng.EngineerId});</p>
-              <p class="delete">@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {id = eng.EngineerId});</p>
+              <p>@Html.ActionLink("Details", "Details", new {id = eng.EngineerId}, new {@class="details"})</p>
+              <p>@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {id = eng.EngineerId}, new {@class="delete"})</p>
             }
         </ul>
-        <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
+        <button class="nav-pill">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
         
     </div>
     <div class="tab-pane" id="machines">
@@ -28,9 +28,10 @@
             @foreach(Machine mac in ViewBag.Mac)
             {
               <h4>@mac.Name</h4>
-              <p>@Html.ActionLink("Details", "Details", new { id = mac.MachineId })</p>
+              <p>@Html.ActionLink("Details", "Details", new { id = mac.MachineId }, new {@class="details"})</p>
+              <p>@Html.ActionLink("Delete Machine", "Delete", "Machines", new {id = mac.MachineId}, new {@class="delete"});</p>
             }
         </ul>
-        <button class="btn">@Html.ActionLink("Add Machine", "Create", "Machines")</button>
+        <button class="nav-pill">@Html.ActionLink("Add Machine", "Create", "Machines")</button>
     </div>
 </div>
