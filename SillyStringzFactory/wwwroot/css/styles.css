@@ -1,0 +1,23 @@
+p.details {
+  background-color: rgba(59, 59, 126, 0.993);
+  position: relative;
+  width: 10%;
+  border-radius: 25px;
+  text-align: center;
+}
+
+p.details:hover {
+  background-color: rgb(96, 187, 156);
+}
+
+p.delete {
+  background-color: rgb(131, 98, 10);
+  position: relative;
+  width: 10%;
+  border-radius: 25px;
+  text-align: center;
+}
+
+p.delete:hover {
+  background-color: rgb(214, 120, 108);
+}

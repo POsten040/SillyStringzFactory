@@ -16,10 +16,12 @@
             @foreach(Engineer eng in ViewBag.Eng)
             {
               <h4>@eng.Name</h4>
-              <p>@Html.ActionLink("Details", "Details", new { id = eng.EngineerId })</p>
+              <p class="details">@Html.ActionLink("Details", "Details", new { id = eng.EngineerId });</p>
+              <p class="delete">@Html.ActionLink("Delete Engineer", "Delete", "Engineers", new {@Style = "color:white;"});</p>
             }
         </ul>
         <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
+        
     </div>
     <div class="tab-pane" id="machines">
         <ul>
@@ -29,6 +31,6 @@
               <p>@Html.ActionLink("Details", "Details", new { id = mac.MachineId })</p>
             }
         </ul>
-        <button>@Html.ActionLink("Add Machine", "Create", "Machines")</button>
+        <button class="btn">@Html.ActionLink("Add Machine", "Create", "Machines")</button>
     </div>
 </div>
