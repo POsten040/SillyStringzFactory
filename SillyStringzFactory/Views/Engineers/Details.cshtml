@@ -1,0 +1,28 @@
+  
+@{
+  Layout = "_Layout";
+}
+
+@model SillyStringzFactory.Models.Engineer;
+
+<h3>Details For: @Html.DisplayFor(model => model.Name)</h3>
+
+<ul>
+@if (@Model.Machines.Count == 0)
+{
+  <p>This engineer isn't assigned to any machines.</p>
+}
+else
+{
+  <h4>Machines assigned to:</h4>
+  @foreach (var join in @Model.Machines)
+  {
+    <p>@join.Machine.Name</p>
+    @using (Html.BeginForm("Un-Assign Machine", "Engineers"))
+    {
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+      <br><input type="submit" value="Delete"/>
+    }
+  }
+}
+</ul>
