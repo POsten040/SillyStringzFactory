@@ -41,5 +41,13 @@ namespace SillyStringzFactory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
     }
+    public ActionResult Details(int id)
+    {
+      Engineer thisEngineer = _db.Engineers
+        .Include(Engineer => Engineer.Machines)
+        .ThenInclude(join => join.Machine)
+        .FirstOrDefault(Engineer => Engineer.EngineerId == id);
+      return View(thisEngineer);
+    }
   }
 }

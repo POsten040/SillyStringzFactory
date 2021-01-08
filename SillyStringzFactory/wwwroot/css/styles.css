@@ -1,18 +1,16 @@
-p.details {
+.details {
   background-color: rgba(59, 59, 126, 0.993);
+  color: white;
   position: relative;
   width: 10%;
   border-radius: 25px;
   text-align: center;
   padding:3px;
-}
-
-p.details:hover {
-  background-color: rgb(96, 187, 156);
 }
 
 .delete {
   background-color: rgb(131, 98, 10);
+  color: white;
   position: relative;
   width: 10%;
   border-radius: 25px;
@@ -20,19 +18,14 @@ p.details:hover {
   padding:3px;
 }
 
-.delete:hover {
-  background-color: rgb(214, 120, 108);
-}
+#engineers #machines {
 
-#engineers {
-
-  background-color: rgba(222, 189, 255, 0.328);
-}
-
-#machines {
   background-color: rgba(222, 189, 255, 0.328);
 }
 
 .nav-pill {
-  background-color: cadetblue;
+  background-color: rgb(51, 105, 51);
+  color:white;
+  padding:3px;
+  border-radius:25px;
 }
