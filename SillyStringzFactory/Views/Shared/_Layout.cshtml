@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Silly Stringz Factory</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
   </head>
   <body>
-    
+    @Html.ActionLink("Home", "Index", "Home")
+    @Html.ActionLink("Add Engineer", "Create", "Engineers")
+    @RenderBody()
   </body>
