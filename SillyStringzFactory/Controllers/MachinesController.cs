@@ -69,7 +69,7 @@ namespace SillyStringzFactory.Controllers
       }
       _db.Entry(machine).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index", "Home");
+      return RedirectToAction("Details", new {id = machine.MachineId});
     }
   }
 }

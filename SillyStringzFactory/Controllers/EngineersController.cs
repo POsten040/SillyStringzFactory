@@ -68,7 +68,7 @@ namespace SillyStringzFactory.Controllers
       }
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index", "Home");
+      return RedirectToAction("Details", new {id = engineer.EngineerId});
     }
     [HttpPost]
     public ActionResult DeleteJoin(int joinId)
