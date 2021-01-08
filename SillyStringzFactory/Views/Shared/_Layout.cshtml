@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
   </head>
   <body>
-    @Html.ActionLink("Home", "Index", "Home")
-    @Html.ActionLink("Add Engineer", "Create", "Engineers")
+    <button class="btn">@Html.ActionLink("Home", "Index", "Home")</button>
+    <button class="btn">@Html.ActionLink("Add Engineer", "Create", "Engineers")</button>
+    <button class="btn">@Html.ActionLink("Add Machine", "Create", "Machines")</button>
     @RenderBody()
   </body>
