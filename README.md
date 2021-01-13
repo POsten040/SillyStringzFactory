@@ -7,7 +7,7 @@
 ## Description
 - This application was made as part of the Epicodus Coding bootcamp coursework.
 
-This application will allow users to create instances of Zelda Breath of the Wild Characters, Locations, and Styles and create many to many relationships betweens these instances. 
+This application will allow a manager of a factory to register Engineers and Machines, and create many to many relationships between them. You can view all engineers, machines, and assign as many Engineers to as many Machines as you want as many time as you want.
 
 ![](ReadMeAssets/recording.gif)
 
